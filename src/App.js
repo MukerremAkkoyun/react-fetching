@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
+
 
 class App extends Component {
 
@@ -12,8 +14,8 @@ class App extends Component {
 
     setTimeout(() => {
    
-      fetch("https://jsonplaceholder.typicode.com/users")
-      .then(data => data.json())
+      axios.get("https://jsonplaceholder.typicode.com/users")
+      .then(users => users.data)
       .then(users => {
         this.setState({
           users : users,
@@ -40,7 +42,7 @@ class App extends Component {
             <div key={user.id}>
               { user.name } - @{ user.username }
             </div>
-          ) : 'null'
+          ) : null
         }
 
       </div>
