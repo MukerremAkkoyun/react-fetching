@@ -25,7 +25,6 @@ class App extends Component {
 
   }
 
-  
   render() {
 
     const { isLoading } = this.state;
@@ -43,6 +42,7 @@ class App extends Component {
             </div>
           ) : 'null'
         }
+
       </div>
     );
   }
